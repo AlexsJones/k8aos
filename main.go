@@ -7,8 +7,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/AlexsJones/k8oas/core"
-	cm "github.com/AlexsJones/k8oas/core/configuration"
+	"github.com/AlexsJones/k8aos/core"
+	cm "github.com/AlexsJones/k8aos/core/configuration"
 	"github.com/abiosoft/ishell"
 	"github.com/dimiro1/banner"
 	"github.com/fatih/color"
@@ -19,13 +19,18 @@ import (
 )
 
 const b = `
-{{ .AnsiColor.Red }} __   ___  _______     ______      __        ________
-{{ .AnsiColor.Red }}|/"| /  ")/"  _  \\   /    " \    /""\      /"       )
-{{ .AnsiColor.Red }}(: |/   /|:  _ /  :| // ____  \  /    \    (:   \___/
-{{ .AnsiColor.Red }}|    __/  \___/___/ /  /    ) :)/' /\  \    \___  \
-{{ .AnsiColor.Red }}(// _  \  //  /_ \\(: (____/ ////  __'  \    __/  \\
-{{ .AnsiColor.Red }}|: | \  \|:  /_   :|\        //   /  \\  \  /" \   :)
-{{ .AnsiColor.Red }}(__|  \__)\_______/  \"_____/(___/    \___)(_______/
+{{ .AnsiColor.Red }} ____    ____         ____           _____             ______
+{{ .AnsiColor.Red }}|    |  |    |   ____|\   \     ____|\    \        ___|\     \
+{{ .AnsiColor.Red }}|    |  |    |  /    /\    \   /     /\    \      |    |\     \
+{{ .AnsiColor.Red }}|    | /    // |    |  |    | /     /  \    \     |    |/____/|
+{{ .AnsiColor.Red }}|    |/ _ _//  |    |__|    ||     |    |    | ___|    \|   | |
+{{ .AnsiColor.Red }}|    |\    \'  |    .--.    ||     |    |    ||    \    \___|/
+{{ .AnsiColor.Red }}|    | \    \  |    |  |    ||\     \  /    /||    |\     \
+{{ .AnsiColor.Red }}|____|  \____\ |____|  |____|| \_____\/____/ ||\ ___\|_____|
+{{ .AnsiColor.Red }}|    |   |    ||    |  |    | \ |    ||    | /| |    |     |
+{{ .AnsiColor.Red }}|____|   |____||____|  |____|  \|____||____|/  \|____|_____|
+{{ .AnsiColor.Red }}  \(       )/    \(      )/       \(    )/        \(    )/
+{{ .AnsiColor.Red }} 	 '       '      '      '         '    '          '    '
 {{ .AnsiColor.Default }}
 `
 

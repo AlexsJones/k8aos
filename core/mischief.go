@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	c "github.com/AlexsJones/k8oas/core/configuration"
+	c "github.com/AlexsJones/k8aos/core/configuration"
 	"github.com/fatih/color"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
