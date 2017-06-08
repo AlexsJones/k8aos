@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/AlexsJones/k8aos/core"
@@ -91,6 +92,13 @@ func main() {
 			if len(text) > 1 {
 				conf.TargetNamespace = strings.TrimSpace(text)
 				color.Blue("Setting namespace context to %s", text)
+			}
+			reader = bufio.NewReader(os.Stdin)
+			color.Red("How many attacks?[default options is: 1]")
+			text, _ = reader.ReadString('\n')
+
+			if len(text) > 1 {
+				conf.AttackCount, _ = strconv.Atoi(strings.TrimSpace(text))
 			}
 			m = core.NewMischief(clientSet)
 			m.Chaos(conf)

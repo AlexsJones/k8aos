@@ -37,15 +37,15 @@ func (m *Mischief) Chaos(config *c.MischiefConfig) {
 	}
 
 	rand.Seed(time.Now().Unix())
-	it := rand.Intn(len(pods.Items))
 
-	for i, pod := range pods.Items {
+	for c := 0; c < config.AttackCount; c++ {
+		it := rand.Intn(len(pods.Items))
+		for i, pod := range pods.Items {
 
-		if i == it {
-			color.Red(pod.Name)
-			m.ClientSet.CoreV1().Pods(config.TargetNamespace).Delete(pod.Name, &metav1.DeleteOptions{})
-		} else {
-			fmt.Println(pod.Name)
+			if i == it {
+				color.Red(pod.Name)
+				m.ClientSet.CoreV1().Pods(config.TargetNamespace).Delete(pod.Name, &metav1.DeleteOptions{})
+			}
 		}
 	}
 	color.Blue("Mischief managed...")
