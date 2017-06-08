@@ -11,6 +11,14 @@
 
 ```
 
+
+## Installation
+```
+go get github.com/AlexsJones/k8oas
+```
+
+## Configuration
+
 `kubectl config view > config`
 
 You may want to override the URL and use `kubectl proxy` with `http://localhost:8001` in the config file
