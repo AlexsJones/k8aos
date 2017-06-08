@@ -43,8 +43,10 @@ func (m *Mischief) Chaos(config *c.MischiefConfig) {
 
 		if i == it {
 			color.Red(pod.Name)
+			m.ClientSet.CoreV1().Pods(config.TargetNamespace).Delete(pod.Name, &metav1.DeleteOptions{})
 		} else {
 			fmt.Println(pod.Name)
 		}
 	}
+	color.Blue("Mischief managed...")
 }
