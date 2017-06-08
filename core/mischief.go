@@ -31,6 +31,11 @@ func (m *Mischief) Chaos(config *c.MischiefConfig) {
 		return
 	}
 
+	if (len(pods.Items)) == 0 {
+		color.Blue("No pods found")
+		return
+	}
+
 	rand.Seed(time.Now().Unix())
 	it := rand.Intn(len(pods.Items))
 
