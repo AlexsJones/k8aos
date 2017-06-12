@@ -115,5 +115,5 @@ func main() {
 			m.Chaos(conf)
 		}})
 
-	shell.Start()
+	shell.Run()
 }
